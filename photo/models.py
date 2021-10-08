@@ -17,3 +17,11 @@ class Category(models.Model):
 
     class Meta:
         ordering = ['name']
+
+
+#image model
+class Image(models.Model):
+    name = models.CharField(max_length = 60)
+    description = models.TextField()
+    image_location = models.ForeignKey('Location')
+    image_category = models.ForeignKey('Category')
