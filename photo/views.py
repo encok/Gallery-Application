@@ -1,5 +1,5 @@
 from django.http  import HttpResponse,Http404
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 
 # Create your views here.
 def welcome(request):
@@ -41,16 +41,8 @@ def past_days_photo(request,past_date):
     except ValueError:
         # Raise 404 error when ValueError is thrown
         raise Http404()
-    
-    
+        assert False
+    if date == dt.date.today():
+        return redirect(photo_of_day)
 
-
-    day = convert_dates(date)
-    html = f'''
-        <html>
-            <body>
-                <h1>News for {day} {date.day}-{date.month}-{date.year}</h1>
-            </body>
-        </html>
-            '''
-    return HttpResponse(html)
+    return render(request, 'all-photos/past-photos.html', {"date": date})
