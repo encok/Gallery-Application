@@ -3,7 +3,8 @@ from django.shortcuts import render
 
 # Create your views here.
 def welcome(request):
-    return render(request,'welcome.html')
+    date = dt.date.today()
+    return render(request,'all-photos/today-photos.html', {"date": date,})
 
 import datetime as dt
 #..........
