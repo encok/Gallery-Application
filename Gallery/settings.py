@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'photo.apps.PhotoConfig',
     'bootstrap3',
+    'bootstrap4',
 ]
 
 MIDDLEWARE = [
@@ -125,3 +126,4 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
 ]
+DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
