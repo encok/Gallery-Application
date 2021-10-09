@@ -35,6 +35,7 @@ class Image(models.Model):
     image_location = models.ForeignKey('Location' ,on_delete=models.CASCADE, null=True)
     image_category = models.ForeignKey('Category' ,on_delete=models.CASCADE, null=True)
     pub_date = models.DateTimeField(auto_now_add=True)
+    image = models.ImageField(upload_to = 'photos/')
 
     def __str__(self):
         return self.name
@@ -52,5 +53,10 @@ class Image(models.Model):
     def update_image(cls, id ,name, description , image_location, image_category):
         update = cls.objects.filter(id = id).update(name = name, description = description ,image_location = image_location,image_category = image_category)
         return update
+
+    @classmethod
+    def search_by_title(cls,search_term):
+        photos = cls.objects.filter(title__icontains=search_term)
+        return photos
 
     

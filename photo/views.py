@@ -1,6 +1,8 @@
 from django.http  import HttpResponse,Http404
 from django.shortcuts import render,redirect
 
+from photo.models import Image
+
 # Create your views here.
 def welcome(request):
     date = dt.date.today()
@@ -46,3 +48,16 @@ def past_days_photo(request,past_date):
         return redirect(photo_of_day)
 
     return render(request, 'all-photos/past-photos.html', {"date": date})
+
+def search_results(request):
+
+    if 'photo' in request.GET and request.GET["photo"]:
+        search_term = request.GET.get("photo")
+        searched_articles = Image.search_by_title(search_term)
+        message = f"{search_term}"
+
+        return render(request, 'all-photos/search.html',{"message":message,"photos": searched_articles})
+
+    else:
+        message = "You haven't searched for any term"
+        return render(request, 'all-photos/search.html',{"message":message})
