@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from models import Category, Photo
+from .models import Category, Photo
 
 
 # Create your views here.
