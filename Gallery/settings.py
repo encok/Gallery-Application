@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'bootstrap3',
     'bootstrap4',
+    'bootstrap5',
 
     'photos.apps.PhotosConfig',
 ]
