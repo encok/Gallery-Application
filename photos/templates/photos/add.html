@@ -25,7 +25,17 @@
                             <label >Select Category</label>
                             <select name="category" class="form-control" >
                                 <option value='none'> Select a category...</option>
+
+                                {% for category in categories%}
+                                <option value='{{category.id}}'>{{category.name}}</option>
+                                {% endfor %}
+
                             </select>
+                          </div>
+
+                          <div class="form-group m-3">
+                            <label >Create a new category</label>
+                            <input name="category_new" type="text" placeholder="create a new category" class="form-control" >
                           </div>
 
                         <div class="form-group m-3">
