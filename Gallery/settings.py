@@ -433,11 +433,13 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # setting configuration parameters globally
-cloudinary.config(
-  cloud_name = "enock-photoshare",
-  api_key = "528228593828417",
-  api_secret = "fpcwnXX4nQPiHpva17H58KySXsk",
-)
-# Activate Django-Heroku.
+
+MEDIA_URL = '/media/'
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.RawMediaCloudinaryStorage'
+CLOUDINARY_STORAGE = {
+     'CLOUD_NAME': 'enock-photoshare',
+      'API_KEY': '528228593828417',
+     'API_SECRET': 'fpcwnXX4nQPiHpva17H58KySXsk'
+}
+# Activate Django-Heroku.
 django_heroku.settings(locals())
