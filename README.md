@@ -18,10 +18,10 @@ FlashGallery
 
 
 ## Screenshots
-<img src="app/static/images/1.png">
-<img src="app/static/images/2.png">
-<img src="app/static/images/3.png">
-<img src="app/static/images/4.png">
+<img src="static/images/1.png">
+<img src="static/images/2.png">
+<img src="static/images/3.png">
+
 
 ## Installation Requirements
   Clone this repository and navigate to the folder.
