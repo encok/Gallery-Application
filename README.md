@@ -8,7 +8,7 @@ FlashGallery
 
 
 ## Link to Live Site 
-
+https://github.com/encok/Gallery-Application
 
 
 
@@ -54,3 +54,4 @@ email: enckkipronoh@gmail.com<br/>
 Phone: 0717854859
 ## License
 This is the link to the MIT license used<br/><br/>
+https://github.com/encok/Gallery-Application/blob/master/LICENSE
