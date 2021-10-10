@@ -22,3 +22,7 @@ class Photo(models.Model):
 
     def __str__(self):
         return self.description
+
+    
+    def save_photo(self):
+        self.save()
