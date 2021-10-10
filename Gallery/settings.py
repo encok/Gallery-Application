@@ -11,6 +11,12 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 """
 
 import os
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
+
+
+
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -20,7 +26,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'oy11z#=8)aq-)4*h+a@-y3xz=x&z(17trs9z)@6(pue1t7pzu@'
+SECRET_KEY = 'fpcwnXX4nQPiHpva17H58KySXsk'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -40,6 +46,8 @@ INSTALLED_APPS = [
     'bootstrap3',
     'bootstrap4',
     'bootstrap5',
+    'cloudinary_storage',
+    'cloudinary',
 
     'photos.apps.PhotosConfig',
 ]
@@ -133,5 +141,11 @@ STATICFILES_DIRS = [
 MEDIA_ROOT = BASE_DIR = 'static/images'
 STATIC_ROOT = BASE_DIR ='staticfiles'
 
-DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': 'enock-photoshare',
+    'API_KEY': '528228593828417',
+    'API_SECRET': 'fpcwnXX4nQPiHpva17H58KySXsk'
+}
 
+MEDIA_URL = '/media/'
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.RawMediaCloudinaryStorage'
