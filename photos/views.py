@@ -50,4 +50,4 @@ def addPhoto(request):
 
 def viewAbout(request):
     about = Photo.objects.get()
-    return render(request,'photos/about.html')
+    return render(request,'photos/templates/about.html')
