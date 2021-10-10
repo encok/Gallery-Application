@@ -439,4 +439,5 @@ cloudinary.config(
   api_secret = "fpcwnXX4nQPiHpva17H58KySXsk",
 )
 # Activate Django-Heroku.
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.RawMediaCloudinaryStorage'
 django_heroku.settings(locals())
